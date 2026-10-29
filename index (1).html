@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UttamBhagya Jewellery — Fine Jewellery</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e0c0a;--card:#16130f;--gold:#c9a45c;--gold2:#e8d3a0;--txt:#f3ece0;--mut:#9b917f;--line:#2a241b}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:'Jost',sans-serif;font-weight:300}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:500}
+header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:18px 5vw;background:linear-gradient(#0e0c0ccc,transparent);backdrop-filter:blur(6px)}
+.logo{font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:3px;color:var(--gold2)}@media(max-width:700px){.logo{font-size:15px;letter-spacing:1.5px}.cartbtn{margin-left:10px;padding:7px 10px}}
+nav a{color:var(--txt);text-decoration:none;margin-left:28px;font-size:13px;letter-spacing:2px;text-transform:uppercase;opacity:.85}
+nav a:hover{color:var(--gold)}
+.cartbtn{cursor:pointer;background:none;border:1px solid var(--gold);color:var(--gold2);padding:8px 16px;font:inherit;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-left:28px}
+.cartbtn:hover{background:var(--gold);color:#000}
+.hero{height:100vh;min-height:560px;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;background:#1a1510 url('https://images.unsplash.com/photo-1721807644561-9efcabee5c42?auto=format&fit=crop&w=1800&q=75') center/cover}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle,#0e0c0a88,#0e0c0aee)}
+.hero div{position:relative;padding:0 20px}
+.hero small{letter-spacing:6px;color:var(--gold);font-size:12px;text-transform:uppercase}
+.hero h1{font-size:clamp(44px,8vw,96px);line-height:1.05;margin:18px 0}
+.hero h1 em{color:var(--gold2)}
+.hero p{max-width:480px;margin:0 auto 34px;color:var(--mut);line-height:1.7}
+.btn{display:inline-block;cursor:pointer;border:1px solid var(--gold);background:var(--gold);color:#120e08;padding:14px 34px;font:inherit;font-weight:500;font-size:12px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:.3s}
+.btn:hover{background:transparent;color:var(--gold2)}
+.btn.o{background:transparent;color:var(--gold2)}
+.btn.o:hover{background:var(--gold);color:#120e08}
+section{padding:100px 5vw}
+.title{text-align:center;margin-bottom:40px}
+.title small{color:var(--gold);letter-spacing:5px;font-size:12px;text-transform:uppercase}
+.title h2{font-size:clamp(34px,5vw,56px);margin-top:10px}
+.filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:50px}
+.filters button{background:none;border:1px solid var(--line);color:var(--mut);padding:9px 22px;font:inherit;font-size:12px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:.3s}
+.filters button.on,.filters button:hover{border-color:var(--gold);color:var(--gold2)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:32px;max-width:1300px;margin:auto}
+.card{background:var(--card);border:1px solid var(--line);transition:.4s;animation:up .6s both}
+.card:hover{transform:translateY(-8px);border-color:var(--gold);box-shadow:0 20px 50px #000a}
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.img{aspect-ratio:1;overflow:hidden;cursor:pointer;background:linear-gradient(135deg,#2a2218,#15110c);position:relative}
+.img img,.mi img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.8s}.art{position:absolute;inset:0;width:100%;height:100%}.mi{position:relative;min-height:320px;background:#0e0c0a}
+.card:hover .img img{transform:scale(1.08)}
+.tag{position:absolute;top:14px;left:14px;background:#0e0c0acc;color:var(--gold2);font-size:10px;letter-spacing:2px;padding:5px 10px;text-transform:uppercase}
+.info{padding:22px;text-align:center}
+.info small{color:var(--mut);letter-spacing:2px;font-size:11px;text-transform:uppercase}
+.info h3{font-size:24px;margin:6px 0}
+.price{color:var(--gold2);font-size:18px;margin-bottom:18px}
+.row{display:flex;gap:8px}
+.row .btn{flex:1;padding:12px 6px;font-size:11px;letter-spacing:2px}
+.about{background:var(--card);text-align:center;border-block:1px solid var(--line)}
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;max-width:1100px;margin:auto}
+.feat div{padding:20px}.feat b{display:block;font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--gold2);margin-bottom:8px;font-weight:500}
+.feat span{color:var(--mut);font-size:14px;line-height:1.6}
+footer{text-align:center;padding:60px 5vw;color:var(--mut);font-size:13px}
+footer .logo{display:block;margin-bottom:12px}
+.wa{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 8px 24px #000a;transition:.3s}
+.wa:hover{transform:scale(1.1)}
+.wa svg{width:30px;fill:#fff}
+.ov{position:fixed;inset:0;background:#000b;z-index:80;opacity:0;pointer-events:none;transition:.3s}
+.ov.show{opacity:1;pointer-events:auto}
+.modal{position:fixed;z-index:90;top:50%;left:50%;transform:translate(-50%,-45%);width:min(900px,92vw);max-height:90vh;overflow:auto;background:var(--card);border:1px solid var(--gold);display:grid;grid-template-columns:1fr 1fr;opacity:0;pointer-events:none;transition:.3s}
+.modal.show{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}
+
+.modal .d{padding:40px 32px}
+.modal h2{font-size:38px;margin:8px 0 12px}
+.modal p{color:var(--mut);line-height:1.8;margin-bottom:20px;font-size:15px}
+.x{position:absolute;top:10px;right:16px;background:none;border:0;color:var(--txt);font-size:30px;cursor:pointer;z-index:2}
+@media(max-width:700px){.modal{grid-template-columns:1fr}nav a{display:none}}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);background:var(--card);z-index:90;border-left:1px solid var(--gold);transform:translateX(100%);transition:.4s;display:flex;flex-direction:column}
+.drawer.show{transform:none}
+.drawer h2{padding:26px;font-size:30px;border-bottom:1px solid var(--line)}
+#items{flex:1;overflow:auto;padding:10px 26px}
+.it{display:flex;gap:14px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.it img{width:68px;height:68px;object-fit:cover;background:#2a2218}
+.it div{flex:1}.it b{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;display:block}
+.it span{color:var(--gold2);font-size:14px}
+.q{display:flex;align-items:center;gap:8px;margin-top:6px}
+.q button{width:24px;height:24px;background:none;border:1px solid var(--line);color:var(--txt);cursor:pointer}
+.q button:hover{border-color:var(--gold)}
+.foot{padding:26px;border-top:1px solid var(--line)}
+.tot{display:flex;justify-content:space-between;font-size:20px;margin-bottom:18px}
+.empty{text-align:center;color:var(--mut);padding:60px 0}
+.foot .btn{width:100%;background:#25d366;border-color:#25d366;color:#fff}
+.foot .btn:hover{background:transparent;color:#25d366}
+.toast{position:fixed;bottom:30px;left:50%;transform:translate(-50%,100px);background:var(--gold);color:#120e08;padding:14px 26px;z-index:100;font-size:13px;letter-spacing:1px;transition:.4s}
+.toast.show{transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">UTTAMBHAGYA JEWELLERY</div>
+  <div style="display:flex;align-items:center"><nav><a href="#collection">Collection</a><a href="#about">Why Us</a><a href="#contact">Contact</a></nav>
+  <button class="cartbtn" onclick="openCart()">Bag (<span id="cnt">0</span>)</button></div>
+</header>
+
+<div class="hero"><div>
+  <small>Handcrafted Fine Jewellery</small>
+  <h1>Timeless Elegance,<br><em>Crafted in Gold</em></h1>
+  <p>Discover pieces made to be treasured — designed with passion, finished to perfection.</p>
+  <a class="btn" href="#collection">Explore Collection</a>
+</div></div>
+
+<section id="collection">
+  <div class="title"><small>The Collection</small><h2>Signature Pieces</h2></div>
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section class="about" id="about">
+  <div class="title"><small>The UttamBhagya Promise</small><h2>Why Choose Us</h2></div>
+  <div class="feat">
+    <div><b>Certified Purity</b><span>Hallmarked gold and certified stones in every piece.</span></div>
+    <div><b>Handcrafted</b><span>Made by master artisans with decades of experience.</span></div>
+    <div><b>Easy Ordering</b><span>Order directly on WhatsApp — personal, quick, hassle-free.</span></div>
+    <div><b>Gift Ready</b><span>Luxury packaging included with every order.</span></div>
+  </div>
+</section>
+
+<footer id="contact">
+  <span class="logo">UTTAMBHAGYA JEWELLERY</span>
+  Fine Jewellery · Order on WhatsApp: +91 90289 43164<br><br>© 2026 UttamBhagya Jewellery. All rights reserved.
+</footer>
+
+<a class="wa" id="waFloat" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.5 8.6 3.5 15.4c0 2.3.6 4.4 1.7 6.3L3 29l7.5-2c1.8 1 3.800 1.500 5.800 1.500 7 0 12.500-5.600 12.500-12.400C28.800 8.600 23 3 16 3zm6.300 17.200c-.3.800-1.600 1.500-2.200 1.600-.6.100-1.300.1-2.100-.1-.5-.2-1.100-.4-1.900-.7-3.300-1.400-5.400-4.700-5.600-4.900-.2-.2-1.300-1.700-1.300-3.200s.8-2.300 1.100-2.600c.3-.3.600-.4.800-.4h.6c.2 0 .5-.1.700.5l1 2.400c.1.200.1.400 0 .600l-.4.600-.600.700c-.2.200-.4.400-.2.800.2.400 1 1.600 2.100 2.600 1.400 1.200 2.600 1.600 3 1.800.4.200.6.100.8-.1l1-1.200c.2-.3.500-.3.800-.2l2.300 1.100c.3.200.5.200.6.400.1.200.1.900-.2 1.700z"/></svg></a>
+
+<div class="ov" id="ov" onclick="closeAll()"></div>
+<div class="modal" id="modal"></div>
+<div class="drawer" id="drawer">
+  <button class="x" onclick="closeAll()">×</button>
+  <h2>Your Bag</h2>
+  <div id="items"></div>
+  <div class="foot"><div class="tot"><span>Total</span><span class="serif" id="total">₹0</span></div>
+  <a class="btn" id="checkout" target="_blank" rel="noopener">Order on WhatsApp</a></div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const PHONE="919028943164";
+const UN=id=>`https://images.unsplash.com/${id}?auto=format&fit=crop&w=800&q=75`;
+const EXTRA=["photo-1601121141418-c1caa10a2a0b","photo-1722410180644-5955f83ec8b1","photo-1721807644561-9efcabee5c42","photo-1601121141461-920cb1993441","photo-1626784215013-13322cb0e471"];
+function srcs(x){return [...x.i.map(UN),...EXTRA.map(UN)]}
+function art(x){
+ const d='<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3e2b0"/><stop offset=".5" stop-color="#c9a45c"/><stop offset="1" stop-color="#8a6a2c"/></linearGradient><radialGradient id="b" cx=".5" cy=".5" r=".7"><stop offset="0" stop-color="#2e2417"/><stop offset="1" stop-color="#0e0c0a"/></radialGradient></defs><rect width="400" height="400" fill="url(#b)"/>';
+ let m;
+ if(x.c=="Rings")m='<circle cx="200" cy="240" r="85" fill="none" stroke="url(#g)" stroke-width="16"/><path d="M165 150 L235 150 L255 120 L200 85 L145 120 Z" fill="#e9f3ff" stroke="url(#g)" stroke-width="5"/><path d="M145 120 L255 120 M200 85 L180 150 M200 85 L220 150" stroke="#9cc3e8" stroke-width="2" fill="none"/>';
+ else if(x.c=="Earrings")m='<g fill="none" stroke="url(#g)" stroke-width="5"><path d="M120 90 v50 M280 90 v50"/></g><circle cx="120" cy="85" r="10" fill="url(#g)"/><circle cx="280" cy="85" r="10" fill="url(#g)"/><path d="M120 140 Q80 200 120 260 Q160 200 120 140Z M280 140 Q240 200 280 260 Q320 200 280 140Z" fill="url(#g)"/><circle cx="120" cy="290" r="22" fill="#f6efe0"/><circle cx="280" cy="290" r="22" fill="#f6efe0"/>';
+ else m='<path d="M70 90 Q200 330 330 90" fill="none" stroke="url(#g)" stroke-width="7" stroke-dasharray="2 9" stroke-linecap="round"/><path d="M70 90 Q200 330 330 90" fill="none" stroke="url(#g)" stroke-width="3"/><path d="M200 262 l-24 26 24 46 24 -46z" fill="url(#g)"/><circle cx="200" cy="288" r="9" fill="#fff3d6"/>';
+ return `<svg class="art" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">${d}${m}</svg>`}
+function img(x,alt){const l=srcs(x);return `<img referrerpolicy="no-referrer" src="${l[0]}" alt="${alt||x.n}" data-p="${x.id}" data-k="0" onerror="nxt(this)">`}
+function nxt(el){const x=P.find(p=>p.id==el.dataset.p),l=srcs(x),k=+el.dataset.k+1;if(k<l.length){el.dataset.k=k;el.src=l[k]}else el.style.display="none"}
+const P=[
+{id:1,n:"Aurora Gold Chain Necklace",c:"Necklaces",p:48500,i:["photo-1611107683227-e9060eccd846"],d:"A lustrous 22k gold chain necklace with a refined finish, designed to catch the light with every movement.",t:"Bestseller"},
+{id:2,n:"Celeste Gold Ring",c:"Rings",p:32000,i:["photo-1689367436629-1d288f1e23b6"],d:"A polished solid gold ring with a clean, timeless design. Everyday luxury, made to be treasured.",t:"New"},
+{id:3,n:"Heritage Chain Bracelet",c:"Bracelets",p:26500,i:["photo-1633810542706-90e5ff7557be"],d:"A handcrafted gold chain bracelet with a secure clasp. Elegant on its own, stunning when stacked.",t:""},
+{id:4,n:"Kundan Beaded Necklace",c:"Necklaces",p:38900,i:["photo-1601121141461-9d6647bca1ed"],d:"Gold with rich purple beadwork, inspired by traditional Indian craftsmanship for festive and bridal wear.",t:"Limited"},
+{id:5,n:"Luna Gold Earrings Set",c:"Earrings",p:21400,i:["photo-1722410180687-b05b50922362"],d:"A matching necklace and earring set in polished gold, light on the ear and bold in presence.",t:""},
+{id:6,n:"Maharani Black Bead Necklace",c:"Necklaces",p:56000,i:["photo-1651160670627-2896ddf7822f"],d:"A statement gold and black bead necklace with intricate detailing, made for weddings and grand occasions.",t:"Premium"}
+];
+let cart=JSON.parse(JSON.stringify([])),cat="All";
+const $=s=>document.getElementById(s),fmt=n=>"₹"+n.toLocaleString("en-IN");
+const fb=`onerror="this.style.display='none'"`;
+function wa(msg){return `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`}
+$("waFloat").href=wa("Hello! I'm interested in your jewellery collection.");
+function toast(m){const t=$("toast");t.textContent=m;t.classList.add("show");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("show"),2200)}
+function render(){
+  const cats=["All",...new Set(P.map(x=>x.c))];
+  $("filters").innerHTML=cats.map(c=>`<button class="${c==cat?'on':''}" onclick="cat='${c}';render()">${c}</button>`).join("");
+  $("grid").innerHTML=P.filter(x=>cat=="All"||x.c==cat).map((x,k)=>`
+  <div class="card" style="animation-delay:${k*.08}s">
+    <div class="img" onclick="view(${x.id})">${img(x)}${x.t?`<span class="tag">${x.t}</span>`:""}</div>
+    <div class="info"><small>${x.c}</small><h3>${x.n}</h3><div class="price">${fmt(x.p)}</div>
+    <div class="row"><button class="btn o" onclick="add(${x.id})">Add to Bag</button><a class="btn" target="_blank" rel="noopener" href="${wa(`Hello! I want to order: ${x.n} (${fmt(x.p)})`)}">Order Now</a></div></div>
+  </div>`).join("");
+}
+function view(id){
+  const x=P.find(p=>p.id==id);
+  $("modal").innerHTML=`<button class="x" onclick="closeAll()">×</button><div class="mi">${img(x)}</div><div class="d"><small style="color:var(--gold);letter-spacing:3px;text-transform:uppercase;font-size:12px">${x.c}</small><h2>${x.n}</h2><div class="price" style="font-size:24px">${fmt(x.p)}</div><p>${x.d}</p><div class="row"><button class="btn o" onclick="add(${x.id});closeAll()">Add to Bag</button><a class="btn" target="_blank" rel="noopener" href="${wa(`Hello! I want to order: ${x.n} (${fmt(x.p)})`)}">Order on WhatsApp</a></div></div>`;
+  $("modal").classList.add("show");$("ov").classList.add("show");
+}
+function add(id){const e=cart.find(c=>c.id==id);e?e.q++:cart.push({id,q:1});upd();toast("Added to your bag ✓")}
+function chg(id,d){const e=cart.find(c=>c.id==id);e.q+=d;if(e.q<1)cart=cart.filter(c=>c.id!=id);upd()}
+function upd(){
+  const n=cart.reduce((a,c)=>a+c.q,0);$("cnt").textContent=n;
+  let tot=0,lines=[];
+  $("items").innerHTML=cart.length?cart.map(c=>{const x=P.find(p=>p.id==c.id);tot+=x.p*c.q;lines.push(`• ${x.n} x${c.q} — ${fmt(x.p*c.q)}`);
+    return `<div class="it">${img(x,"")}<div><b>${x.n}</b><span>${fmt(x.p)}</span><div class="q"><button onclick="chg(${x.id},-1)">−</button>${c.q}<button onclick="chg(${x.id},1)">+</button></div></div></div>`}).join(""):`<div class="empty">Your bag is empty</div>`;
+  $("total").textContent=fmt(tot);
+  $("checkout").href=cart.length?wa(`Hello! I'd like to place an order:\n\n${lines.join("\n")}\n\nTotal: ${fmt(tot)}`):"#";
+  $("checkout").onclick=e=>{if(!cart.length){e.preventDefault();toast("Add a piece to your bag first")}};
+}
+function openCart(){$("drawer").classList.add("show");$("ov").classList.add("show")}
+function closeAll(){["drawer","modal","ov"].forEach(i=>$(i).classList.remove("show"))}
+document.addEventListener("keydown",e=>e.key=="Escape"&&closeAll());
+render();upd();
+</script>
+</body>
+</html>
